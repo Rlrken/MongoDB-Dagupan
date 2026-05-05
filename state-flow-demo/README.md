@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# React State Flow Demonstration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. State Flow in React
 
-Currently, two official plugins are available:
+This application demonstrates how state flows from a parent component to child components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Flow Explanation:
+- Parent component holds the state using useState
+- State is passed down to child components using props
+- Child components receive data but do not directly modify parent state
+- State changes in parent automatically update all child components
 
-## React Compiler
+This shows React's **unidirectional data flow**, where data moves only from parent → child.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2. Props Usage
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Props are used to pass data from Parent to Child components.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Example:
+- Parent passes state and functions to Child
+- Child receives them as props
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This allows components to communicate without sharing state directly.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 3. Unidirectional Data Flow
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React follows a one-way data flow:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Parent → Child → Display
+
+- Parent owns the state
+- Child can request updates via callback
+- UI updates automatically when state changes
+
+This prevents data inconsistency and makes applications easier to debug.
+
+---
+
+## 4. Summary
+
+This project demonstrates:
+- State management using useState
+- Props for communication between components
+- Callback functions for child-to-parent updates
+- Unidirectional data flow in React
