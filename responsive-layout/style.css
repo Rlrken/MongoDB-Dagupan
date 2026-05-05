@@ -1,0 +1,45 @@
+/* Step 4: Styling both divs */
+.box1, .box2 {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Different background colors */
+.box1 {
+    background-color: lightblue;
+}
+
+.box2 {
+    background-color: lightcoral;
+}
+
+/* Default layout (side by side) */
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* Step 5: Media Queries */
+
+/* Tablet / Medium screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box1, .box2 {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .box1, .box2 {
+        font-size: 18px;
+        width: 95%;
+    }
+}
