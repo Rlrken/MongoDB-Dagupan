@@ -1,0 +1,161 @@
+/* =====================
+   3.1 Container Styling
+   ===================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 16px;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 24px 0 8px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #1a1a2e;
+    letter-spacing: -0.5px;
+}
+
+header .subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+/* Output Display Area */
+.output-area {
+    background-color: #1a1a2e;
+    color: #00d4aa;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    padding: 20px 24px;
+    border-radius: 10px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+    transition: all 0.3s ease;
+}
+
+.output-area .placeholder {
+    color: #556;
+    font-style: italic;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 3px solid #4f46e5;
+    padding-left: 10px;
+}
+
+/* =====================
+   3.2 Controls Styling
+   ===================== */
+
+.btn {
+    padding: 10px 22px;
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background-color: #3730a3;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-submit {
+    background-color: #059669;
+    margin-top: 4px;
+}
+
+.btn-submit:hover {
+    background-color: #047857;
+}
+
+/* Input & Select Fields */
+.input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:hover {
+    border-color: #a5b4fc;
+}
+
+/* 4.7 Focus highlight applied via JS — defined here */
+.input-field.focused {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    background-color: #fff;
+}
+
+/* 4.6 Hover box */
+.hover-box {
+    padding: 20px;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    cursor: default;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.hover-box.hovered {
+    background-color: #eef2ff;
+    border-color: #4f46e5;
+    color: #4f46e5;
+    font-weight: 600;
+}

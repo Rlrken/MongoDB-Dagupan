@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Handling Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>JS Event Handling Lab</h1>
+            <p class="subtitle">DOM Events in Action</p>
+        </header>
+
+        <!-- OUTPUT DISPLAY AREA -->
+        <div class="output-area" id="output">
+            <span class="placeholder">Events will appear here...</span>
+        </div>
+
+        <!-- 4.2 CLICK EVENT -->
+        <section class="card">
+            <h2>Click Event</h2>
+            <button id="click-btn" class="btn">Click Me</button>
+        </section>
+
+        <!-- 4.3 INPUT & CHANGE EVENTS -->
+        <section class="card">
+            <h2>Input &amp; Change Events</h2>
+            <input type="text" id="text-input" class="input-field"
+                   placeholder="Type something..." />
+            <select id="color-select" class="input-field">
+                <option value="">-- Select a color --</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </section>
+
+        <!-- 4.4 SUBMIT EVENT -->
+        <section class="card">
+            <h2>Submit Event</h2>
+            <form id="demo-form">
+                <input type="text" id="form-input" class="input-field"
+                       placeholder="Enter your name..." required />
+                <button type="submit" class="btn btn-submit">Submit Form</button>
+            </form>
+        </section>
+
+        <!-- 4.5 KEYUP EVENT -->
+        <section class="card">
+            <h2>Keyup Event</h2>
+            <input type="text" id="keyup-input" class="input-field"
+                   placeholder="Press any key..." />
+        </section>
+
+        <!-- 4.6 MOUSEOVER & MOUSEOUT EVENTS -->
+        <section class="card">
+            <h2>Mouseover &amp; Mouseout Events</h2>
+            <div id="hover-box" class="hover-box">Hover over me!</div>
+        </section>
+
+        <!-- 4.7 FOCUS & BLUR EVENTS -->
+        <section class="card">
+            <h2>Focus &amp; Blur Events</h2>
+            <input type="text" id="focus-input" class="input-field"
+                   placeholder="Click to focus..." />
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
