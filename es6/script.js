@@ -1,18 +1,17 @@
-
 /* =========================
    STEP 2: var → let / const
 ========================= */
 
 // OLD: var (not recommended)
-// var name = "John";
+// var studentName = "John";
 
 // NEW:
-let name = "John";   // can be changed
+let studentName = "John";   // can be changed
 const country = "Philippines"; // cannot be changed
 
-name = "Mark";
+studentName = "Mark";
 
-console.log("Name:", name);
+console.log("Name:", studentName);
 console.log("Country:", country);
 
 
