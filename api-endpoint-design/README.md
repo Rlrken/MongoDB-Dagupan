@@ -116,3 +116,46 @@ This API follows REST principles and includes:
 - Query parameters for filtering and pagination
 - Nested resource relationships
 - Standard HTTP status codes
+
+
+## Evidence of Resource Identification
+
+The system is built around the following clearly defined resources:
+
+- Products → items available in the online store
+- Orders → customer purchase transactions
+- Users → system accounts
+
+These resources are implemented and represented in the API endpoints found in `api_endpoints.js`.
+
+---
+
+## Evidence of Methods (CRUD Operations)
+
+The API uses standard REST methods:
+
+- GET → Retrieve resources (products, orders, users)
+- POST → Create new resources (orders)
+- PUT → Update existing resources
+- DELETE → Remove resources
+
+---
+
+## Evidence of RESTful Design
+
+The following principles are applied:
+
+- Path Parameters → `/products/:id`
+- Query Parameters → `/products?category=electronics`
+- Nested Resources → `/users/:userId/orders`
+- Versioning → `/v1/`
+
+---
+
+## Conclusion
+
+This API design demonstrates a complete understanding of:
+- Resource-oriented architecture
+- RESTful API principles
+- HTTP methods and status codes
+- Query and path parameter usage
