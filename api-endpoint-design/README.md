@@ -1,121 +1,118 @@
-# Online Store API Design
+# Online Store API Design Documentation
 
-## Step 1: Conceptual Setup
+## 1. Resources (Data Entities)
 
-### 1.1 Resources (Data Entities)
+In this API, the system manages the following core resources:
 
-The primary resources in an Online Store API are:
+### Products
+Represents items available for sale in the online store.
+Fields include: id, name, price, category, stock.
 
-- Products (items for sale: name, price, category, stock)
-- Orders (customer purchases)
-- Users (customer accounts)
-- Reviews (product feedback)
+### Orders
+Represents purchases made by users.
+Fields include: orderId, userId, productId, quantity, status.
 
----
+### Users
+Represents customers who use the system.
+Fields include: userId, name, email.
 
-### 1.2 Base URI & Versioning
-
-Base URI:
-
-/v1/
-
-
-Examples:
-- /v1/products
-- /v1/orders
-- /v1/users
-
-Versioning ensures future updates do not break existing applications.
+### Reviews
+Represents feedback given by users on products.
+Fields include: reviewId, productId, userId, rating, comment.
 
 ---
 
-## Step 2: Read Operations (GET)
+## 2. Base URI & Versioning
 
-### 2.1 Get All Products
+The API uses versioning to ensure backward compatibility:
 
+Base URI: /v1/
+
+All endpoints follow this structure to prevent breaking changes in future updates.
+
+---
+
+## 3. Read Operations (GET)
+
+### Get all products
 GET /v1/products
 
 
-Returns a list of all products.
+Returns all available products in the system.
 
 ---
 
-### 2.2 Get Single Product
-
+### Get single product
 GET /v1/products/:id
 
 
-Example:
-
-GET /v1/products/101
-
-
-Returns details of a specific product.
+Returns details of a specific product using its unique ID.
 
 ---
 
-### 2.3 Filtering, Sorting, Pagination
-
+### Filtering, sorting, pagination
 GET /v1/products?category=electronics&sort=price_asc&limit=10
 
 
-Features:
-- Filter by category
+Allows users to:
+- Filter products by category
 - Sort by price
-- Limit results
+- Limit number of results
 
 ---
 
-## Step 3: Write Operations
+## 4. Write Operations
 
-### 3.1 Create Order
-
+### Create order
 POST /v1/orders
 
 
-Example body:
-```json
-{
-  "userId": 1,
-  "productId": 101,
-  "quantity": 2
-}
+Creates a new order in the system using JSON data.
 
-Creates a new order.
+---
 
-### 3.2 Delete Order
+### Delete order
 DELETE /v1/orders/:id
 
-Example:
 
-DELETE /v1/orders/55
+Removes a specific order from the system.
 
-Deletes a specific order.
+---
 
-## Step 4: Nested Resources
-###4.1 User Orders
+## 5. Nested Resources
+
+### User orders
 GET /v1/users/:userId/orders
 
-Example:
+Returns all orders belonging to a specific user.
 
-GET /v1/users/10/orders
+---
 
-Returns all orders of a user.
-
-### 4.2 Product Reviews
+### Product reviews
 GET /v1/products/:productId/reviews
 
-Example:
 
-GET /v1/products/101/reviews
+Returns all reviews associated with a product.
 
-Returns reviews for a product.
+---
 
-## Step 5: HTTP Status Codes
-Scenario	Code
-Success (GET)	200
-Created (POST)	201
-Bad Request	400
-Not Found	404
-Server Error	500
-Deleted Successfully	200 / 204
+## 6. HTTP Status Codes
+
+- 200 OK → Successful request
+- 201 Created → Resource successfully created
+- 400 Bad Request → Invalid input
+- 404 Not Found → Resource not found
+- 500 Internal Server Error → Server failure
+
+---
+
+## 7. Summary of API Design
+
+This API follows REST principles and includes:
+
+- Clear separation of resources (Products, Orders, Users, Reviews)
+- Proper use of HTTP methods (GET, POST, DELETE)
+- Versioned base URI (/v1)
+- Query parameters for filtering and pagination
+- Nested resource relationships
+- Standard HTTP status codes
