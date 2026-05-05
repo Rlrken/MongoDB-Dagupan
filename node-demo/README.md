@@ -8,6 +8,9 @@ node -v
 
 This confirms that Node.js is installed and functioning properly in the system.
 
+Node.js Version Output:
+v20.11.0
+
 ---
 
 ## Criterion 2: Project Setup
