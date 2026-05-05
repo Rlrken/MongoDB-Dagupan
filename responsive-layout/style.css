@@ -1,45 +1,48 @@
-/* Step 4: Styling both divs */
-.box1, .box2 {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* DIV 1 */
+.div1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 2rem;
+    background-color: #ff5733;
+    color: white;
     padding: 20px;
-    margin: 10px;
+    text-align: center;
 }
 
-/* Different background colors */
-.box1 {
-    background-color: lightblue;
+/* DIV 2 */
+.div2 {
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.box2 {
-    background-color: lightcoral;
-}
-
-/* Default layout (side by side) */
+/* 📱 MOBILE FIRST LAYOUT (STACKING REQUIRED) */
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
-/* Step 5: Media Queries */
-
-/* Tablet / Medium screens */
-@media (max-width: 768px) {
+/* TABLET */
+@media (min-width: 768px) {
     body {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
     }
 
-    .box1, .box2 {
-        width: 80%;
-        text-align: center;
+    .div1, .div2 {
+        width: 50%;
     }
 }
 
-/* Mobile screens */
-@media (max-width: 480px) {
-    .box1, .box2 {
-        font-size: 18px;
-        width: 95%;
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .div1, .div2 {
+        font-size: 2.5rem;
     }
 }
