@@ -75,11 +75,13 @@ fullstack-intro/
 
 ## 5. Architectural flow:
 Client (Browser)
-↓
-Frontend (UI)
-↓
-Backend (Server)
-↓
-Database
-↑
-Response back to user
+        ↓
+Frontend (UI Layer - HTML, CSS, JavaScript)
+        ↓
+Backend (Server / API - Handles logic)
+        ↓
+Database (MongoDB - Stores data)
+        ↑
+Response flows back to Backend
+        ↑
+Frontend displays data to User
