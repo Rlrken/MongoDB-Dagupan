@@ -1,0 +1,100 @@
+/* =========================
+   GENERAL PAGE STYLING
+========================= */
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* PAGE TITLE */
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   FLEX CONTAINER
+========================= */
+
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   BOX STYLING
+========================= */
+
+.box {
+  flex: 1;
+  min-width: 250px;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+/* DIFFERENT COLORS */
+
+.box1 {
+  background-color: #3498db;
+}
+
+.box2 {
+  background-color: #e74c3c;
+}
+
+/* HOVER EFFECT */
+
+.box:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   TABLET MEDIA QUERY
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    background-color: #eef6ff;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .box {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   MOBILE MEDIA QUERY
+========================= */
+
+@media (max-width: 480px) {
+
+  body {
+    background-color: #fff4f4;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .box {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
