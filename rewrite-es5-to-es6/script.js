@@ -1,130 +1,91 @@
-/* =========================
-   STEP 2: var → let / const
-========================= */
+// ======================================
+// STEP 2: var → let / const
+// ======================================
 
-// OLD (ES5):
-// var studentName = "John";
-// var country = "Philippines";
+// const used for values that do not change
+const school = "ABC University";
 
-// NEW (ES6):
-let studentName = "John";       // let — can be reassigned
-const country = "Philippines";  // const — never changes
+// let used for variables that may change
+let score = 85;
 
-studentName = "Mark";           // reassignment works with let
+console.log("School:", school);
+console.log("Score:", score);
 
-console.log("Name:", studentName);
-console.log("Country:", country);
+// ======================================
+// STEP 3: Arrow Functions
+// ======================================
 
+// ES5 Function
+/*
+function greet(name) {
+  return "Hello " + name;
+}
+*/
 
-/* =========================
-   STEP 3: Arrow Functions
-========================= */
-
-// OLD (ES5):
-// function multiply(a, b) {
-//     return a * b;
-// }
-
-// NEW (ES6 Arrow Function):
-const multiply = (a, b) => a * b;
-
-// Arrow function with block body
-const square = (n) => {
-    return n * n;
+// ES6 Arrow Function
+const greet = (name) => {
+  return `Hello ${name}`;
 };
 
-console.log("Multiply:", multiply(4, 5));
-console.log("Square:", square(6));
+console.log(greet("Ram"));
 
+// ======================================
+// STEP 4: Template Literals
+// ======================================
 
-/* =========================
-   STEP 4: Template Literals
-========================= */
+const firstName = "John";
+const age = 21;
 
-const student = "Rken";
-const course = "BSIT";
-const year = 3;
+// OLD CONCATENATION
+// "My name is " + firstName + " and I am " + age + " years old."
 
-// OLD (ES5):
-// console.log("Student: " + student + ", Course: " + course + ", Year: " + year);
+// TEMPLATE LITERAL
+const message = `My name is ${firstName} and I am ${age} years old.`;
 
-// NEW (ES6 Template Literal):
-console.log(`Student: ${student}, Course: ${course}, Year Level: ${year}`);
+console.log(message);
 
-// Multi-line template literal
-const profile = `
-  Name   : ${student}
-  Course : ${course}
-  Year   : ${year}
-`;
-console.log(profile);
+// ======================================
+// STEP 5: Destructuring
+// ======================================
 
-
-/* =========================
-   STEP 5: MODERN ES6 FEATURES
-========================= */
-
-/* ---------- Object Destructuring ---------- */
-
-const user = {
-    id: 1,
-    username: "coder123",
-    email: "coder@example.com",
-    role: "admin"
+const student = {
+  studentName: "Sarah",
+  course: "Computer Science"
 };
 
-// Extract specific properties
-const { username, email, role } = user;
+// OBJECT DESTRUCTURING
+const { studentName, course } = student;
 
-console.log("Username:", username);
-console.log("Email:", email);
-console.log("Role:", role);
+console.log(studentName);
+console.log(course);
 
-/* ---------- Array Destructuring ---------- */
+// ======================================
+// STEP 5: Spread Operator
+// ======================================
 
-const scores = [95, 88, 76, 60];
-const [first, second, , fourth] = scores;  // skip third with empty comma
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
 
-console.log("1st Score:", first);
-console.log("2nd Score:", second);
-console.log("4th Score:", fourth);
+// MERGING ARRAYS
+const mergedNumbers = [...numbers1, ...numbers2];
 
+console.log(mergedNumbers);
 
-/* ---------- Spread Operator (Arrays) ---------- */
+// ======================================
+// STEP 5: Default Parameters
+// ======================================
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
+const multiply = (a, b = 2) => {
 
-// Merge arrays
-const combined = [...arr1, ...arr2];
-console.log("Combined Array:", combined);
+  return a * b;
 
-// Copy an array
-const arrCopy = [...arr1];
-console.log("Array Copy:", arrCopy);
-
-
-/* ---------- Spread Operator (Objects) ---------- */
-
-const baseInfo = { school: "PSU", campus: "Dagupan" };
-const studentInfo = { ...baseInfo, studentName, course };
-
-console.log("Student Info:", studentInfo);
-
-
-/* ---------- Default Parameters ---------- */
-
-const greet = (name = "Guest", greeting = "Hello") => {
-    return `${greeting}, ${name}!`;
 };
 
-console.log(greet("Alice", "Welcome"));  // custom values
-console.log(greet("Bob"));              // uses default greeting
-console.log(greet());                   // uses all defaults
+console.log(multiply(5));
+console.log(multiply(5, 4));
 
+// ======================================
+// FINAL MESSAGE
+// ======================================
 
-/* =========================
-   FINAL CHECK
-========================= */
-
-console.log("ES6 Conversion Lab Completed!");
+console.log("All ES6 features executed successfully!");
