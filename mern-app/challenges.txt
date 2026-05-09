@@ -1,0 +1,53 @@
+MERN Stack Lab - Challenges and Solutions
+==========================================
+Name: [Your Name]
+Date: May 9, 2026
+
+------------------------------------------
+Challenge 1: Deprecated Mongoose Options
+------------------------------------------
+Problem:
+The server threw a MongoParseError on startup because the lab code
+included outdated options (useNewUrlParser and useUnifiedTopology)
+that are no longer supported in Mongoose v8.
+
+Solution:
+Removed the options object from mongoose.connect() since newer
+versions of Mongoose handle these settings automatically.
+
+------------------------------------------
+Challenge 2: Syntax Error in server.js
+------------------------------------------
+Problem:
+The server threw a SyntaxError: "Unexpected token ')'" caused by a
+stray ");" left on its own line when copying code from the lab document.
+
+Solution:
+Removed the extra ");" line and fixed the console.log in app.listen
+to use backtick template literals instead of regular quotes.
+
+------------------------------------------
+Challenge 3: MongoDB Connection Refused
+------------------------------------------
+Problem:
+The server could not connect to MongoDB locally, throwing a
+MongooseServerSelectionError: "connect ECONNREFUSED 127.0.0.1:27017"
+because MongoDB was not installed and running on the machine.
+
+Solution:
+Used MongoDB Atlas as a free cloud alternative. Created a cluster,
+configured network access, and updated the .env file with the full
+Atlas connection string.
+
+------------------------------------------
+Challenge 4: Port 5000 Access Denied
+------------------------------------------
+Problem:
+Accessing localhost:5000 showed "Access Denied" because Windows
+reserves port 5000 for a system service, blocking the Express server.
+
+Solution:
+Changed the PORT in .env from 5000 to 3001 and updated the axios
+URL in the frontend and Postman requests accordingly.
+
+==========================================
